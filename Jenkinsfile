@@ -41,6 +41,8 @@ pipeline {
                         }
                     }
             steps {
+                script {
+                    echo 'do nothing here' 
                 }
         }     
         stage('Remove local docker image') {
