@@ -41,8 +41,7 @@ pipeline {
                         }
                     }
             steps {
-                echo "find this error"
-             }
+                }
         }     
         stage('Remove local docker image') {
             steps{
