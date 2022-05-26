@@ -1,9 +1,9 @@
 pipeline {
     agent any 
     environment {
-        registryCredential = ''
-        imageName = 'salam9920'
-        dockerImage = 'salam9920/nodejsapp'
+        registryCredential = 'docker_Hub'
+        imageName = 'salam9920/nodejsapp'
+        dockerImage = ''
         }
     stages {
         stage('Run the tests') {
@@ -41,6 +41,7 @@ pipeline {
                         }
                     }
             steps {
+                echo "find this error"
              }
         }     
         stage('Remove local docker image') {
