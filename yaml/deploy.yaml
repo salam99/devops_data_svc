@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: ui-svc
-        image: beachcoder/external:devops.6
+        image: salam9920/internal:latest
         env:
           - name: SERVER
             value: 'http://demo-data-svc:8888'
