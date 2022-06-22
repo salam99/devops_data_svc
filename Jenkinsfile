@@ -1,14 +1,14 @@
 pipeline {
     agent any 
     environment {
-        registryCredential = 'salam9920'
+        registryCredential = 'dockerhub'
         imageName = 'salam9920/nodejsapp'
         dockerImage = ''
         }
     stages {
         stage('Run the tests') {
              agent {
-                docker { 
+                any { 
                     image 'node:18-alpine'
                     args '-e HOME=/tmp -e NPM_CONFIG_PREFIX=/tmp/.npm'
                     reuseNode true
@@ -34,7 +34,7 @@ pipeline {
         }     
          stage('deploy to k8s') {
              agent {
-                docker { 
+                any { 
                     image 'google/cloud-sdk:latest'
                     args '-e HOME=/tmp'
                     reuseNode true
